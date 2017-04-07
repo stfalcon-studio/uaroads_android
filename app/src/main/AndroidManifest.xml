@@ -3,6 +3,7 @@
     package="com.stfalcon.new_uaroads_android">
 
     <application
+        android:name=".UaroadsApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
