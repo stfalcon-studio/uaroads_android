@@ -1,16 +1,14 @@
 package com.stfalcon.new_cookorama_android.common.ui
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
 
 /*
  * Created by Anton Bevza on 3/28/17.
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(getLayoutResId())
     }

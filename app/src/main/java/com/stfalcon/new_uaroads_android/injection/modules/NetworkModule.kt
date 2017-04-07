@@ -18,7 +18,7 @@ import javax.inject.Singleton
  * Created by Anton Bevza on 3/28/17.
  */
 @Module
-open class NetworkModule {
+class NetworkModule {
 
     @Provides
     @Singleton

@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">new_uaroads_android</string>
+    <string name="app_name">UARoads</string>
+
+    <string name="menu_tracks">Tracks</string>
+    <string name="menu_donate">Donate</string>
+    <string name="menu_settings">Settings</string>
+
 </resources>

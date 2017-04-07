@@ -6,10 +6,14 @@ package com.stfalcon.new_uaroads_android.features.main
 
 class MainScreenContract {
     interface View {
-        fun showToast();
+        fun navigateToTracks()
+        fun navigateToDonate()
+        fun navigateToSettings()
     }
 
     interface Presenter {
-        //presenter methods
+        fun onTracksClicked()
+        fun onDonateClicked()
+        fun onSettingsClicked()
     }
 }

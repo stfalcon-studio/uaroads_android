@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:compat="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_list"
+        android:icon="@drawable/ic_list_white_24dp"
+        android:title="@string/menu_tracks"
+        compat:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_donate"
+        android:icon="@drawable/ic_appbar_gift"
+        android:title="@string/menu_donate"
+        compat:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="@string/menu_settings"
+        compat:showAsAction="ifRoom" />
+
+</menu>
