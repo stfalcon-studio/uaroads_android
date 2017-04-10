@@ -7,6 +7,7 @@ package com.stfalcon.new_cookorama_android.injection.module
 import android.support.v4.app.FragmentManager
 import com.stfalcon.new_uaroads_android.features.main.MainActivity
 import com.stfalcon.new_uaroads_android.features.main.MainScreenContract
+import com.tbruyelle.rxpermissions2.RxPermissions
 import dagger.Module
 import dagger.Provides
 
@@ -17,6 +18,9 @@ class MainScreenModule {
     fun providesFragmentManager(activity: MainActivity): FragmentManager {
         return activity.supportFragmentManager
     }
+
+    @Provides
+    fun providesRxPermissions(activity: MainActivity) = RxPermissions(activity)
 
     @Provides fun provideView(mainActivity: MainActivity): MainScreenContract.View {
         return mainActivity

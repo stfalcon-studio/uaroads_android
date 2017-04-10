@@ -6,10 +6,13 @@ package com.stfalcon.new_uaroads_android.features.findroute
 
 class FindRouteContract {
     interface View {
-
+        fun showFromAddress(address: String)
+        fun showLocationChooser(key : Int)
     }
 
     interface Presenter {
-
+        fun onMyLocationClicked()
+        fun onFromClicked()
+        fun onToClicked()
     }
 }

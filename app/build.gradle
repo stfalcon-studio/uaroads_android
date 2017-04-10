@@ -32,39 +32,45 @@ android {
 }
 
 ext {
-    support_library_vesrion = '25.3.0'
+    support_library_version = '25.3.0'
+    play_services_version = '10.2.1'
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //Android
-    compile "com.android.support:appcompat-v7:$support_library_vesrion"
-    compile "com.android.support:support-v4:$support_library_vesrion"
-    compile "com.android.support:design:$support_library_vesrion"
+    compile "com.android.support:appcompat-v7:$support_library_version"
+    compile "com.android.support:support-v4:$support_library_version"
+    compile "com.android.support:design:$support_library_version"
+    //Play Services
+    compile "com.google.android.gms:play-services-location:$play_services_version"
     //Kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     //Dagger 2
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.10'
-    compile 'com.google.dagger:dagger:2.10'
-    compile 'com.google.dagger:dagger-android:2.10'
-    compile 'com.google.dagger:dagger-android-support:2.10'
-    kapt "com.google.dagger:dagger-compiler:2.10"
-    provided 'javax.annotation:jsr250-api:1.0'
     //rest
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    compile 'com.google.code.gson:gson:2.7'
     //extensions
-    compile 'org.jetbrains.anko:anko-common:0.9.1'
     // RxJava
-    compile 'io.reactivex.rxjava2:rxjava:2.0.8'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
     //TESTS
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile 'com.google.dagger:dagger:2.10'
+    compile 'com.google.dagger:dagger-android:2.10'
+    compile 'com.google.dagger:dagger-android-support:2.10'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'org.jetbrains.anko:anko-common:0.9.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.8'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
+    compile 'com.patloew.rxlocation:rxlocation:1.0.3'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta5'
     testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.10'
+    kapt 'com.google.dagger:dagger-compiler:2.10'
+    provided 'javax.annotation:jsr250-api:1.0'
 }

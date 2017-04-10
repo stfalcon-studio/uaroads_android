@@ -27,8 +27,8 @@ class MainScreenPagerAdapter @Inject constructor(val context: Context, fragmentM
 
     override fun getPageTitle(position: Int): CharSequence {
         return when (position) {
-            0 -> context.getString(R.string.menu_tracks)
-            1 -> context.getString(R.string.menu_donate)
+            0 -> context.getString(R.string.tab_routes)
+            1 -> context.getString(R.string.tab_record)
             else -> TODO("wrong page index")
         }
     }
