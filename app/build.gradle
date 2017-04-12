@@ -68,7 +68,6 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
     compile 'com.patloew.rxlocation:rxlocation:1.0.3'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta5'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.10'
