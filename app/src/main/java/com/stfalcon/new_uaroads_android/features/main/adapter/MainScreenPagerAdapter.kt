@@ -24,7 +24,6 @@ class MainScreenPagerAdapter @Inject constructor(val context: Context, fragmentM
 
     override fun getCount() = 2
 
-
     override fun getPageTitle(position: Int): CharSequence {
         return when (position) {
             0 -> context.getString(R.string.tab_routes)

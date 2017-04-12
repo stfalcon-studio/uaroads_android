@@ -4,6 +4,7 @@ import android.location.Address
 import android.location.Location
 import com.patloew.rxlocation.RxLocation
 import com.stfalcon.new_cookorama_android.common.ui.BasePresenter
+import com.stfalcon.new_uaroads_android.common.network.models.response.LatLng
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -16,6 +17,7 @@ import javax.inject.Inject
 
 class FindRoutePresenter @Inject constructor(val view: FindRouteContract.View,
                                              val rxLocation: RxLocation) : BasePresenter(), FindRouteContract.Presenter {
+
     override fun onToClicked() {
         view.showLocationChooser(FindRouteFragment.KEY_GET_TO_LOCATION)
     }
@@ -24,7 +26,7 @@ class FindRoutePresenter @Inject constructor(val view: FindRouteContract.View,
         disposables.add(getLastLocation()
                 .toSingle()
                 .subscribe({
-                    view.showLocationChooser(FindRouteFragment.KEY_GET_TO_LOCATION, it)
+                    view.showLocationChooser(FindRouteFragment.KEY_GET_FROM_LOCATION, it)
                 }, {
                     view.showLocationChooser(FindRouteFragment.KEY_GET_TO_LOCATION)
                 }))
@@ -39,6 +41,14 @@ class FindRoutePresenter @Inject constructor(val view: FindRouteContract.View,
                     view.showFromAddress(it)
                 })
         )
+    }
+
+    override fun onFromSelectedPlace(placeTitle: String, placeLocation: LatLng) {
+        view.showFromAddress(placeTitle)
+    }
+
+    override fun onToSelectedPlace(placeTitle: String, placeLocation: LatLng) {
+        view.showToAddress(placeTitle)
     }
 
     private fun getLastLocation() = rxLocation.location().lastLocation()

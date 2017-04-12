@@ -44,6 +44,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
-        android:visibility="gone"/>
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/viewMyLocation"
+        layout="@layout/item_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:visibility="gone" />
 
 </RelativeLayout>

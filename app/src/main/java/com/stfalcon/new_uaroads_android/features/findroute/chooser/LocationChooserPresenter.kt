@@ -14,6 +14,7 @@ class LocationChooserPresenter @Inject constructor(val view: LocationChooserCont
                                                    val location: Location?,
                                                    val placesRepo: PlacesRepo)
     : BasePresenter(), LocationChooserContract.Presenter {
+
     private val list = mutableListOf<GeoPlacePrediction>()
 
     override fun onClickNavigateButton() {
@@ -29,7 +30,7 @@ class LocationChooserPresenter @Inject constructor(val view: LocationChooserCont
                             if (it.isNotEmpty()) {
                                 view.showResults(it)
                             } else {
-                                location?.apply { view.showEmptyState(this) }
+                                view.showEmptyState(location)
                             }
                         },
                         {
@@ -37,5 +38,15 @@ class LocationChooserPresenter @Inject constructor(val view: LocationChooserCont
                         })
     }
 
+    override fun onPlaceSelected(item: GeoPlacePrediction) {
+        view.returnPlaceResult(item.place.name, item.place.point.position)
+    }
 
+    override fun onMyLocationSelected() {
+        view.returnMyLocationResult()
+    }
+
+    override fun onViewCreated() {
+        view.showEmptyState(location)
+    }
 }

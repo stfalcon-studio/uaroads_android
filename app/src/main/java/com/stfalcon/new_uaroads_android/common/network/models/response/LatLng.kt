@@ -1,9 +1,11 @@
 package com.stfalcon.new_uaroads_android.common.network.models.response
 
+import java.io.Serializable
+
 /*
  * Created by Anton Bevza on 4/12/17.
  */
-class LatLng {
+class LatLng : Serializable {
 
     var latitude: Double
     var longitude: Double

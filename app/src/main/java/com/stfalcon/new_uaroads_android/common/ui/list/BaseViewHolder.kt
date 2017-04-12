@@ -7,24 +7,16 @@ import android.widget.RelativeLayout
 
 abstract class BaseViewHolder<T> : RelativeLayout {
 
-  constructor(context: Context) : super(context) {
-    init()
-  }
+    constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : super(context, attrs, defStyleAttr) {
+        init()
+    }
 
-  constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-    init()
-  }
+    private fun init() {
+        View.inflate(context, layoutResId(), this)
+    }
 
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-    init()
-  }
+    protected abstract fun layoutResId(): Int
 
-  private fun init() {
-    View.inflate(context, layoutResId(), this)
-  }
-
-  protected abstract fun layoutResId(): Int
-
-  abstract fun bind(item: T)
+    abstract fun bind(item: T)
 
 }

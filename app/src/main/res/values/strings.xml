@@ -13,5 +13,7 @@
     <string name="search_hint">Search</string>
 
     <string name="query_ukraine">Ukraine,+%s</string>
+    <string name="place_my_location">My location</string>
+    <string name="place_my_location_pos">%1$f %2$f</string>
 
 </resources>
