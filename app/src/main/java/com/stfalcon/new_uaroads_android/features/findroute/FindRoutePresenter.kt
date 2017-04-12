@@ -21,20 +21,27 @@ class FindRoutePresenter @Inject constructor(val view: FindRouteContract.View,
     }
 
     override fun onFromClicked() {
-        view.showLocationChooser(FindRouteFragment.KEY_GET_FROM_LOCATION)
+        disposables.add(getLastLocation()
+                .toSingle()
+                .subscribe({
+                    view.showLocationChooser(FindRouteFragment.KEY_GET_TO_LOCATION, it)
+                }, {
+                    view.showLocationChooser(FindRouteFragment.KEY_GET_TO_LOCATION)
+                }))
     }
 
     override fun onMyLocationClicked() {
-        disposables.add(rxLocation.location()
-                .lastLocation()
+        disposables.add(getLastLocation()
                 .flatMapObservable { getAddressFromLocation(it) }
                 .map { it.getAddressLine(0) }
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe {
+                .subscribe({
                     view.showFromAddress(it)
-                }
+                })
         )
     }
+
+    private fun getLastLocation() = rxLocation.location().lastLocation()
 
     private fun getAddressFromLocation(location: Location): Observable<Address> {
         return rxLocation.geocoding().fromLocation(location).toObservable()

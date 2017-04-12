@@ -5,13 +5,14 @@ package com.stfalcon.new_cookorama_android.injection.module
  */
 
 import android.content.Context
+import com.stfalcon.new_cookorama_android.injection.component.LocationChooserSubComponent
 import com.stfalcon.new_cookorama_android.injection.component.MainScreenSubComponent
 import com.stfalcon.new_uaroads_android.UaroadsApp
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module(subcomponents = arrayOf(MainScreenSubComponent::class))
+@Module(subcomponents = arrayOf(MainScreenSubComponent::class, LocationChooserSubComponent::class))
 class AppModule {
 
     @Singleton

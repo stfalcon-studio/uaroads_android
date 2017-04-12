@@ -1,4 +1,4 @@
-package com.stfalcon.new_uaroads_android.injection.modules
+package com.stfalcon.new_uaroads_android.common.injection.modules
 
 import android.content.Context
 import com.patloew.rxlocation.RxLocation

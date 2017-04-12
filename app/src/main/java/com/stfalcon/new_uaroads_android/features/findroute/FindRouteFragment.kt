@@ -1,5 +1,6 @@
 package com.stfalcon.new_uaroads_android.features.findroute
 
+import android.location.Location
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
@@ -7,7 +8,6 @@ import com.stfalcon.new_cookorama_android.common.ui.BaseFragment
 import com.stfalcon.new_uaroads_android.R
 import com.stfalcon.new_uaroads_android.features.findroute.chooser.LocationChooserActivity
 import kotlinx.android.synthetic.main.fragment_find_route.*
-import org.jetbrains.anko.intentFor
 import javax.inject.Inject
 
 /*
@@ -39,8 +39,8 @@ class FindRouteFragment : BaseFragment(), FindRouteContract.View {
         tvFrom.text = address
     }
 
-    override fun showLocationChooser(key: Int) {
-        startActivityForResult(activity.intentFor<LocationChooserActivity>(), key)
+    override fun showLocationChooser(key: Int, location: Location?) {
+        startActivityForResult(LocationChooserActivity.getIntent(activity, location), key)
     }
 
 }

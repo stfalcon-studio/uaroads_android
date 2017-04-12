@@ -1,4 +1,4 @@
-package com.stfalcon.new_uaroads_android.injection.modules
+package com.stfalcon.new_uaroads_android.features.findroute
 
 import com.stfalcon.new_uaroads_android.features.findroute.FindRouteContract
 import com.stfalcon.new_uaroads_android.features.findroute.FindRouteFragment

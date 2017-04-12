@@ -21,5 +21,4 @@ class MainScreenPresenter @Inject constructor(val view: MainScreenContract.View)
         view.navigateToSettings()
     }
 
-
 }

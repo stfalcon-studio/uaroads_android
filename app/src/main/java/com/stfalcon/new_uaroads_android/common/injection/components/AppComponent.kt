@@ -4,7 +4,8 @@ import com.stfalcon.new_cookorama_android.injection.module.ActivityInjectionModu
 import com.stfalcon.new_cookorama_android.injection.module.AppModule
 import com.stfalcon.new_cookorama_android.injection.module.NetworkModule
 import com.stfalcon.new_uaroads_android.UaroadsApp
-import com.stfalcon.new_uaroads_android.injection.modules.LocationModule
+import com.stfalcon.new_uaroads_android.common.injection.modules.LocationModule
+import com.stfalcon.new_uaroads_android.common.injection.modules.ServicesModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
@@ -16,7 +17,8 @@ import javax.inject.Singleton
  */
 @Singleton
 @Component(modules = arrayOf(AndroidSupportInjectionModule::class, AppModule::class,
-        ActivityInjectionModule::class, NetworkModule::class, LocationModule::class))
+        ActivityInjectionModule::class, NetworkModule::class, ServicesModule::class,
+        LocationModule::class))
 interface AppComponent {
 
     @Component.Builder

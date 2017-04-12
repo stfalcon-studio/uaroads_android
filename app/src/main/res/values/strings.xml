@@ -10,5 +10,8 @@
     <string name="tab_record">Record</string>
     <string name="find_route_from">From</string>
     <string name="find_route_to">To</string>
+    <string name="search_hint">Search</string>
+
+    <string name="query_ukraine">Ukraine,+%s</string>
 
 </resources>
