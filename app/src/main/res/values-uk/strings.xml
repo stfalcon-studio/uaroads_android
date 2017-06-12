@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 stfalcon.com
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">UARoads</string>
+    <string name="query_ukraine">Україна,+%s</string>
+    <string name="best_route_distance">%.0f км</string>
+    <string name="best_route_duration">%1$d год %2$d хв</string>
+    <string name="best_route_duration_short">%1$d м</string>
+    <string name="best_route_from">з</string>
+    <string name="best_route_to">до</string>
+    <string name="error_connection">Перевірте інтернет з\'єднання</string>
+    <string name="error_location_permission_not_granted">Цей додаток не може працювати без даного дозволу</string>
+    <string name="error_play_services_unavailable">Google Play Services недоступні. Додаток не буде працювати</string>
+    <string name="find_route_build">Побудувати маршрут</string>
+    <string name="find_route_from">звідки</string>
+    <string name="find_route_to">куди</string>
+    <string name="gps_label">GPS</string>
+    <string name="intro_screen_1">Прокладайте маршрути кращими українськими дорогами за критерієм якості.</string>
+    <string name="intro_screen_2">Збирайте статистику якості дороги за допомогою автоматичної фіксації ям.</string>
+    <string name="intro_start">Старт</string>
+    <string name="menu_donate">Донат</string>
+    <string name="menu_settings">Налаштування</string>
+    <string name="menu_tracks">Треки</string>
+    <string name="ntf_pause">Пауза</string>
+    <string name="ntf_recording">Запис...</string>
+    <string name="place_my_location">Моє розташування</string>
+    <string name="place_my_location_pos">%1$f %2$f</string>
+    <string name="record_processed_distance">дистанція оброблена\nна сервері</string>
+    <string name="record_continue">Продовжити</string>
+    <string name="record_copyright_made_by">Made by</string>
+    <string name="record_current_session_desc">поточна подорож</string>
+    <string name="record_force_value">Значення струсу: %.2fG</string>
+    <string name="record_last_session_desc">остання подорож</string>
+    <string name="record_pause">Пауза</string>
+    <string name="record_start">початок\nЗапису</string>
+    <string name="record_stop">Стоп</string>
+    <string name="record_units_km">км</string>
+    <string name="search_hint">Пошук</string>
+    <string name="settings_app_version">Версія додатку:</string>
+    <string name="settings_auto_send">Відправляти треки автоматично</string>
+    <string name="settings_auto_start_sound">Звук автоматичного старту</string>
+    <string name="settings_autostart">Автоматичний запис</string>
+    <string name="settings_dev_mode_disabled">Ви більше не розробник</string>
+    <string name="settings_dev_mode_enabled">Ви перемкнули додаток у режим розробника</string>
+    <string name="settings_email_hint">Введіть e-mail</string>
+    <string name="settings_error_email">Будь ласка, введіть валідний e-mail</string>
+    <string name="settings_label">Налаштування</string>
+    <string name="settings_login">Увійти</string>
+    <string name="settings_login_description">Авторизовані користувачі можуть переглядати статистику на сайті, потрапити в TOП та отримати нагороду за свої досягнення.</string>
+    <string name="settings_logout">Вийти</string>
+    <string name="settings_pit_sound">Звук ями</string>
+    <string name="settings_section_about">Про додаток</string>
+    <string name="settings_section_settings">Налаштування</string>
+    <string name="settings_section_user">Користувач</string>
+    <string name="settings_send_wifi_only">Відправляти тільки по Wi-Fi</string>
+    <string name="settings_show_notification">Show notification (improves auto-start of the recording)</string>
+    <string name="settings_user_id">ID користувача:</string>
+    <string name="settings_user_id_copied">Скопійовано у буфер</string>
+    <string name="stfalcon_com">stfalcon.com</string>
+    <string name="tab_record">Запис</string>
+    <string name="tab_routes">Маршрути</string>
+    <string name="tracks_distance">%d м</string>
+    <string name="tracks_label">Подорожі</string>
+    <string name="search_no_result_error">По запиту %s нічого не знайдено</string>
+    <string name="empty_trips">У Вас немає записів.\nПочніть нову подорож\nз UaRoads</string>
+    <string name="changelog_message">Вітаємо, Ви встановили абсолютно нову версію додатку! Ваші записи з попередньої версії видалені, однак загальна дистанція збережена та відображається у вікні “Запис“. Для перегляду інформації увійдіть у свій аккаунт. Дякуємо за зібрану статистику!</string>
+</resources>

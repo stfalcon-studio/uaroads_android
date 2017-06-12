@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OSRMrouting</string>
+    <string name="beta">Бета-версия</string>
+    <string name="beta_text">Друзья, это бета-версия навигатора с базовыми функциями.\nЗаметили ошибку - обязательно сообщите нам.\nБудем рады вашим пожеланиям и идеям.</string>
+    <string name="text_loading">Загрузка...</string>
+    <string name="text_km_format">%s км</string>
+    <string name="text_last_point_title">Финиш</string>
+    <string name="text_m_format">%s м</string>
+    <string name="text_time_format">%d мин</string>
+    <string name="text_full_time_format">%1$d ч %2$d мин</string>
+    <string name="error_building_route">Не удалось построить маршрут. Попробуйте повторить попытку позже...</string>
+    <string name="ok">Ок</string>
+    <string name="text_gps_is_disabled">На вашем телефоне выключен GPS. Чтобы приложение работало корректно, его следует включить.</string>
+    <string name="text_building_route">Идет процесс построения маршрута. Пожалуйста, подождите… </string>
+    <string name="send_email">Написать команде UARoads</string>
+    <string name="dont_show">Больше не показывать</string>
+</resources>

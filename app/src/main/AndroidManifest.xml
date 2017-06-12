@@ -1,0 +1,101 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stfalcon.new_uaroads_android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <application
+        android:name=".UaroadsApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.awareness.API_KEY"
+            android:value="AIzaSyCuRHCdmQQBAoTK5-pMZB0z0xULkBc3RUw" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="b7ba58a3e64c5ff0d9fbc4faebb86c28b1bc40b9" />
+
+        <activity android:name=".features.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".features.settings.SettingsActivity" />
+        <activity
+            android:name=".features.places.LocationChooserActivity"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".features.bestroute.BestRouteActivity"
+            android:theme="@style/AppThemeOrange" />
+        <activity android:name=".features.intro.IntroActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".features.tracks.TracksActivity" />
+
+        <activity
+            android:name="com.uaroads.osrmrouting.view.NavigatorActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <service android:name=".features.record.service.RecordService" />
+        <service android:name=".features.tracks.service.TracksUploadService" />
+
+        <service
+            android:name=".features.tracks.autoupload.AutoUploadJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".features.autostart.AutoStartJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <!--FOR GOOGLE ANALYTICS -->
+
+        <!--Optionally, register AnalyticsReceiver and AnalyticsService to support background
+            dispatching on non-Google Play devices-->
+        <receiver
+            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!--Optionally, register CampaignTrackingReceiver and CampaignTrackingService to enable
+             installation campaign reporting-->
+        <receiver
+            android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
+    </application>
+
+</manifest>
