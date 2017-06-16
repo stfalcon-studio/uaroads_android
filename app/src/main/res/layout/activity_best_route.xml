@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2017 stfalcon.com
   ~
   ~    Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.stfalcon.new_uaroads_android.features.bestroute.BestRouteActivity">
@@ -100,19 +100,19 @@
         <ImageView
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:src="@drawable/ic_time"/>
+            android:src="@drawable/ic_time" />
 
         <TextView
             android:id="@+id/tvRouteDuration"
             style="@style/TextBlack16"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <ImageView
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:layout_marginLeft="8dp"
-            android:src="@drawable/ic_distance"/>
+            android:src="@drawable/ic_distance" />
 
         <TextView
             android:id="@+id/tvRouteDistance"
@@ -139,5 +139,12 @@
         android:layout_height="@dimen/toolbar_shadow_height"
         android:layout_below="@id/toolbar"
         android:background="@drawable/gradient_toolbar_shadow" />
+
+    <FrameLayout
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:visibility="invisible"/>
 
 </RelativeLayout>

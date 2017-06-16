@@ -17,19 +17,27 @@
 package com.stfalcon.new_uaroads_android.features.bestroute
 
 import android.Manifest
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.animation.DecelerateInterpolator
 import android.webkit.WebViewClient
 import com.stfalcon.mvphelper.MvpActivity
 import com.stfalcon.new_uaroads_android.R
 import com.stfalcon.new_uaroads_android.common.network.models.LatLng
+import com.stfalcon.new_uaroads_android.ext.hideView
 import com.stfalcon.new_uaroads_android.ext.showView
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.uaroads.osrmrouting.view.NavigatorActivity
 import kotlinx.android.synthetic.main.activity_best_route.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
+
 
 class BestRouteActivity : MvpActivity<BestRouteContract.Presenter, BestRouteContract.View>(), BestRouteContract.View {
 
@@ -63,6 +71,13 @@ class BestRouteActivity : MvpActivity<BestRouteContract.Presenter, BestRouteCont
         initToolbar()
         initWebView()
         initViews()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            animationView.showView()
+            animationView.post {
+                collapse(animationView, 300, toolbar.height)
+            }
+        }
     }
 
     override fun parseIntent() {
@@ -122,5 +137,23 @@ class BestRouteActivity : MvpActivity<BestRouteContract.Presenter, BestRouteCont
                         }
                 )
 
+    }
+
+    fun collapse(v: View, duration: Int, targetHeight: Int) {
+        val prevHeight = v.height
+        val valueAnimator = ValueAnimator.ofInt(prevHeight, targetHeight)
+        valueAnimator.interpolator = DecelerateInterpolator()
+        valueAnimator.addUpdateListener { animation ->
+            v.layoutParams.height = animation.animatedValue as Int
+            v.requestLayout()
+        }
+        valueAnimator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                v.hideView()
+            }
+        })
+        valueAnimator.interpolator = DecelerateInterpolator()
+        valueAnimator.duration = duration.toLong()
+        valueAnimator.start()
     }
 }

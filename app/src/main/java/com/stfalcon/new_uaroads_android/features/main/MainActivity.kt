@@ -16,20 +16,30 @@
 
 package com.stfalcon.new_uaroads_android.features.main
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.os.Build
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewAnimationUtils
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.stfalcon.mvphelper.MvpActivity
 import com.stfalcon.new_uaroads_android.BuildConfig
 import com.stfalcon.new_uaroads_android.R
+import com.stfalcon.new_uaroads_android.common.RevealAnimationEvent
+import com.stfalcon.new_uaroads_android.ext.showView
 import com.stfalcon.new_uaroads_android.features.intro.IntroActivity
 import com.stfalcon.new_uaroads_android.features.main.adapter.MainScreenPagerAdapter
 import com.stfalcon.new_uaroads_android.features.settings.SettingsActivity
 import com.stfalcon.new_uaroads_android.features.tracks.TracksActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
@@ -41,15 +51,27 @@ class MainActivity : MvpActivity<MainScreenContract.Presenter, MainScreenContrac
 
     @Inject lateinit var pagerAdapter: MainScreenPagerAdapter
 
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initToolbar()
         initPager()
+        revealView.visibility = View.INVISIBLE
     }
 
     override fun onResume() {
         super.onResume()
         checkPlayServicesAvailable()
+        revealView.visibility = View.INVISIBLE
     }
 
     private fun initToolbar() {
@@ -107,5 +129,27 @@ class MainActivity : MvpActivity<MainScreenContract.Presenter, MainScreenContrac
         alert.setMessage(getString(R.string.changelog_message))
         alert.setPositiveButton(getString(R.string.settings_login),
                 { _, _ -> startActivity(SettingsActivity.getIntent(this)) }).show()
+    }
+
+    @Subscribe
+    fun onRevealAnimationEvent(event: RevealAnimationEvent) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val finalRadius = Math.hypot(revealView.width.toDouble(),
+                    revealView.height.toDouble()).toFloat()
+            revealView.setBackgroundColor(ContextCompat.getColor(this, event.color))
+
+            val anim = ViewAnimationUtils.createCircularReveal(revealView, event.centerX, (pager.y + event.centerY).toInt(),
+                    0f, finalRadius)
+
+            anim.addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    super.onAnimationEnd(animation)
+                    event.onAnimationEnd.invoke()
+                }
+            })
+            revealView.showView()
+
+            anim.start()
+        }
     }
 }

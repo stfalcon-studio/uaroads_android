@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2017 stfalcon.com
   ~
   ~    Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,5 +41,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tabLayout" />
+
+    <View
+        android:id="@+id/revealView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent" />
 
 </RelativeLayout>

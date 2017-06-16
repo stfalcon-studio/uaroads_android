@@ -20,12 +20,14 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.location.Location
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
 import android.webkit.WebViewClient
 import com.stfalcon.mvphelper.MvpFragment
 import com.stfalcon.new_uaroads_android.R
+import com.stfalcon.new_uaroads_android.common.RevealAnimationEvent
 import com.stfalcon.new_uaroads_android.common.network.models.LatLng
 import com.stfalcon.new_uaroads_android.ext.log
 import com.stfalcon.new_uaroads_android.ext.showView
@@ -33,7 +35,9 @@ import com.stfalcon.new_uaroads_android.features.bestroute.BestRouteActivity
 import com.stfalcon.new_uaroads_android.features.places.LocationChooserActivity
 import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.fragment_find_route.*
+import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.toast
+
 
 /*
  * Created by Anton Bevza on 4/7/17.
@@ -113,10 +117,23 @@ class FindRouteFragment : MvpFragment<FindRouteContract.Presenter, FindRouteCont
 
     override fun showBuildRouteButton() {
         btnBuildRoute.show()
+        btnBuildRoute.bringToFront()
     }
 
     override fun navigateToBestRoute(locationFrom: LatLng, locationTo: LatLng, titleFrom: String, titleTo: String) {
-        startActivity(BestRouteActivity.getIntent(activity, locationFrom, locationTo, titleFrom, titleTo))
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val x = (btnBuildRoute.x + btnBuildRoute.width / 2).toInt()
+            val y = (btnBuildRoute.y + btnBuildRoute.height / 2).toInt()
+
+            val event = RevealAnimationEvent(x, y, R.color.colorAccent, {
+                startActivity(BestRouteActivity.getIntent(activity, locationFrom, locationTo, titleFrom, titleTo))
+                activity.overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave)
+            })
+
+            EventBus.getDefault().post(event)
+        } else {
+            startActivity(BestRouteActivity.getIntent(activity, locationFrom, locationTo, titleFrom, titleTo))
+        }
     }
 
     override fun showError(text: String) {

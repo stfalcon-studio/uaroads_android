@@ -122,11 +122,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/containerFromTo"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-28dp"
+        android:layout_marginTop="@dimen/fab_margin"
         android:layout_marginRight="16dp"
         android:src="@drawable/ic_action_search"
         android:visibility="visible"
         app:backgroundTint="@color/orange" />
 
+    <View
+        android:id="@+id/revealView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:visibility="invisible"/>
 
 </RelativeLayout>
