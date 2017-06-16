@@ -1,0 +1,281 @@
+<!--
+  ~ Copyright (c) 2017 stfalcon.com
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--focus thief-->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:title="@string/settings_label"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_padding_big">
+
+            <TextView
+                style="@style/TextGrayDark14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray10"
+                android:paddingBottom="12dp"
+                android:paddingLeft="@dimen/activity_padding_big"
+                android:paddingRight="@dimen/activity_padding_big"
+                android:paddingTop="12dp"
+                android:text="@string/settings_section_user"/>
+
+            <TextView
+                style="@style/TextGray14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="@dimen/activity_padding"
+                android:text="@string/settings_login_description"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/settings_email_hint"
+                android:inputType="textEmailAddress|textMultiLine"/>
+
+            <Button
+                android:id="@+id/btnLogin"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/settings_login"/>
+
+            <TextView
+                style="@style/TextGrayDark14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/gray10"
+                android:paddingBottom="12dp"
+                android:paddingLeft="@dimen/activity_padding_big"
+                android:paddingRight="@dimen/activity_padding_big"
+                android:paddingTop="12dp"
+                android:text="@string/settings_section_settings"/>
+
+            <Switch
+                android:id="@+id/switchWifiOnly"
+                style="@style/TextBlack16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp"
+                android:text="@string/settings_send_wifi_only"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray10"/>
+
+            <Switch
+                android:id="@+id/switchPitSound"
+                style="@style/TextBlack16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp"
+                android:text="@string/settings_pit_sound"
+                android:visibility="gone"/>
+
+            <View
+                android:id="@+id/dividerPitSound"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray10"
+                android:visibility="gone"/>
+
+            <Switch
+                android:id="@+id/switchAutostartSound"
+                style="@style/TextBlack16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp"
+                android:text="@string/settings_auto_start_sound"
+                android:visibility="gone"/>
+
+            <View
+                android:id="@+id/dividerAutostartSound"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray10"
+                android:visibility="gone"/>
+
+            <Switch
+                android:id="@+id/switchAutoSend"
+                style="@style/TextBlack16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp"
+                android:text="@string/settings_auto_send"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray10"/>
+
+            <Switch
+                android:id="@+id/switchAutostart"
+                style="@style/TextBlack16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp"
+                android:text="@string/settings_autostart" />
+
+            <Switch
+                android:id="@+id/switchShowNotification"
+                style="@style/TextBlack16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp"
+                android:text="@string/settings_show_notification"
+                android:visibility="gone"/>
+
+            <TextView
+                style="@style/TextGrayDark14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray10"
+                android:paddingBottom="12dp"
+                android:paddingLeft="@dimen/activity_padding_big"
+                android:paddingRight="@dimen/activity_padding_big"
+                android:paddingTop="12dp"
+                android:text="@string/settings_section_about"/>
+
+            <LinearLayout
+                android:id="@+id/containerAppVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextBlack16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_app_version"/>
+
+                <TextView
+                    android:id="@+id/tvAppVersion"
+                    style="@style/TextGray14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray10"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="@dimen/activity_padding_big"
+                android:layout_marginRight="@dimen/activity_padding_big"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/tvUserIdTitle"
+                    style="@style/TextBlack16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/btnCopy"
+                    android:layout_toStartOf="@+id/btnCopy"
+                    android:text="@string/settings_user_id"/>
+
+                <TextView
+                    android:id="@+id/tvUserId"
+                    style="@style/TextGray14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvUserIdTitle"
+                    android:layout_marginTop="4dp"
+                    android:layout_toLeftOf="@+id/btnCopy"
+                    android:layout_toStartOf="@+id/btnCopy"/>
+
+                <ImageButton
+                    android:id="@+id/btnCopy"
+                    style="@style/Widget.AppCompat.ActionButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_copy_gray_24dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray10"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

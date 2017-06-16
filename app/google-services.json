@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "155276136667",
+    "project_id": "api-project-155276136667"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155276136667:android:5ac80584990ddbb8",
+        "android_client_info": {
+          "package_name": "com.stfalcon.uaroads"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuRHCdmQQBAoTK5-pMZB0z0xULkBc3RUw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-44978148-13"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

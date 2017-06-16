@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="1dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/darker_gray"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/btn_center_pos">
+        <shape android:shape="oval"/>
+    </item>
+</layer-list>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">OSRMrouting</string>
+
+    <string name="text_gps_is_disabled">GPS is disabled on your phone. Please enable it for correct work.</string>
+    <string name="text_building_route">Routing in progress. Please wait…</string>
+    <string name="text_loading">Loading…</string>
+
+    <string name="error_building_route">Routing has failed. Please try again later.</string>
+
+    <string name="text_full_time_format">%1$d г %2$d хв</string>
+    <string name="text_time_format">%d min</string>
+    <string name="text_km_format">%s km</string>
+    <string name="text_m_format">%s м</string>
+    <string name="text_last_point_title">Finish</string>
+    <string name="beta">Beta-version</string>
+    <string name="beta_text">This is a beta-version of the navigator.\nNoticed a bug? Tell us!\nWe are also interested in your feature requests and ideas.</string>
+    <string name="ok">OK</string>
+    <string name="send_email">Send a letter to UARoads team</string>
+    <string name="dont_show">Don\`t show again</string>
+
+</resources>
