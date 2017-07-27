@@ -2,6 +2,8 @@
 
 # UaRoads
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f29b959ac2124688814d471d313d5b1f)](https://www.codacy.com/app/alexz89ua/uaroads_android?utm_source=github.com&utm_medium=referral&utm_content=stfalcon-studio/uaroads_android&utm_campaign=badger)
+
 UAroads is a unique service for road condition monitoring. It provides safety and comfort to drivers.
 Project goal is to build routes through better roads with surface of higher quality.
 Data on road quality is gathered automatically if GPS is turned on when a person is driving. Its accuracy is achieved by using a complex mathematical algorithm working on our server. Our findings are available on the official website of the project http://uaroads.com/
