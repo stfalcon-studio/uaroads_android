@@ -1,5 +1,3 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f29b959ac2124688814d471d313d5b1f)](https://www.codacy.com/app/alexz89ua/uaroads_android?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stfalcon-studio/uaroads_android&amp;utm_campaign=Badge_Grade)
-
 # UaRoads
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f29b959ac2124688814d471d313d5b1f)](https://www.codacy.com/app/alexz89ua/uaroads_android?utm_source=github.com&utm_medium=referral&utm_content=stfalcon-studio/uaroads_android&utm_campaign=badger)
