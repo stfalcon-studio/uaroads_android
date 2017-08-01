@@ -74,7 +74,7 @@ dependencies {
     compile 'com.evernote:android-job:1.1.10'
     compile 'com.android.support:multidex:1.0.1'
     //UI
-    compile 'com.codemybrainsout.onboarding:onboarder:1.0.3'
+    compile 'com.codemybrainsout.onboarding:onboarder:1.0.4'
     compile 'io.realm:android-adapters:2.0.0'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     //Play Services
